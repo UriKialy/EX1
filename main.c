@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-int main()
+int main(int argc, char* argv[])
 {
     int first;
     int last;
