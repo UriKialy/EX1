@@ -7,39 +7,14 @@ int main()
     int last;
     int a;
     int b;
-    printf(" insert first number :  \n");
     scanf("%d", &first);
-    printf(" insert second number :\n");
     scanf("%d", &last);
     printf("\n");
-    printf("the prime numbers are:");
+    printf("The Armstrong numbers are: ");
     a = first, b = last;
     for (; a <= b; a++)
     {
-
-        if (isPrime(a) == 1)
-        {
-            printf("%d ", a);
-        }
-    }
-    printf("\n");
-    printf("the armstrong numbers are:");
-    a = first, b = last;
-    for (; a <= b; a++)
-    {
-
         if (isArmstrong(a) == 1)
-        {
-            printf("%d ", a);
-        }
-    }
-    printf("\n");
-    printf("the strong numbers are:");
-    a = first, b = last;
-    for (; a <= b; a++)
-    {
-
-        if (isStrong(a) == 1)
         {
             printf("%d ", a);
         }
@@ -48,9 +23,28 @@ int main()
     printf("the Palindrom numbers are:");
     a = first, b = last;
     for (; a <= b; a++)
-    {   
-
+    {
         if (isPalindrome(a) == 1)
+        {
+            printf("%d ", a);
+        }
+    }
+    printf("\n");
+    printf("The Prime numbers are: ");
+    a = first, b = last;
+    for (; a <= b; a++)
+    {
+        if (isPrime(a) == 1)
+        {
+            printf("%d ", a);
+        }
+    }
+    printf("\n");
+    printf("The Strong numbers are: ");
+    a = first, b = last;
+    for (; a <= b; a++)
+    {
+        if (isStrong(a) == 1)
         {
             printf("%d ", a);
         }
