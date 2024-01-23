@@ -48,7 +48,7 @@ int main()
     printf("the Palindrom numbers are:");
     a = first, b = last;
     for (; a <= b; a++)
-    {
+    {   
 
         if (isPalindrome(a) == 1)
         {
