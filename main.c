@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-int main(int argc, char* argv[])
+int main()
 {
     int first;
     int last;
@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
         }
     }
     printf("\n");
-    printf("the Palindrom numbers are:");
+    printf("The Palindromes are: ");
     a = first, b = last;
     for (; a <= b; a++)
     {
