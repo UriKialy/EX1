@@ -1,33 +1,45 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-int power(int base,int expo){
-    int i=1;
-    int ans=base;
-    for(i;i<expo;i++){
-        ans=ans*base;
+int power(int base, int expo)
+{
+    if (base < 0 || expo < 0)
+    {
+        printf("negative number, error");
+        return 0;
+    }
+    int i = 1;
+    int ans = base;
+    for (; i < expo; i++)
+    {
+        ans = ans * base;
     }
     return ans;
 }
 
 int isArmstrong(int a)
 {
+    if (a < 0)
+    {
+        printf("negative number, error");
+        return 0;
+    }
     int i = 0;
     int j = a;
     int curr = 0;
     int aNum = a;
     int count = 0;
-    while (aNum>0)
+    while (aNum > 0)
     { // checking how many digits are a
-          aNum=aNum/10;
-            count++;
-        }
+        aNum = aNum / 10;
+        count++;
+    }
     int c = 0;
-    for (c; c < count; c++)
+    for (; c < count; c++)
     { // raise the digits to the power of the number.size
         curr = j % 10;
         i = i + power(curr, count);
-        j=j/10;
+        j = j / 10;
     }
     if (i == a)
     {
@@ -39,12 +51,17 @@ int isArmstrong(int a)
     }
 }
 
-int isPalindrom(int a)
+int isPalindrome(int n)
 {
+    if (n< 0)
+    {
+        printf("negative number, error");
+        return 0;
+    }
     int ans = 0;
-    int reversed = 0 ;
-    int origin = a;
-    if (a < 10)
+    int reversed = 0;
+    int origin = n;
+    if (n< 10)
     {
         ans = 1;
     }
@@ -57,7 +74,7 @@ int isPalindrom(int a)
             origin = origin / 10;
         }
     }
-    if (reversed == a)
+    if (reversed == n)
     {
         ans = 1;
     }
