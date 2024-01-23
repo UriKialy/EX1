@@ -9,7 +9,6 @@ int main()
     int b;
     scanf("%d", &first);
     scanf("%d", &last);
-    printf("\n");
     printf("The Armstrong numbers are:");
     a = first, b = last;
     for (; a <= b; a++)
