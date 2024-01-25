@@ -4,6 +4,7 @@ AR=ar
 OBJECTS_MAIN=main.o
 
 FLAGS= -Wall -g
+DYN_LIB_FLAGS=-shared -fPIC -o 
 
 all: loopd loops recursives recursived maindrec mains mainldoop
 
@@ -18,11 +19,11 @@ mainldoop: $(OBJECTS_MAIN)
     
 loopd: libclassloops.so
 libclassloops.so: libclassloops.a $ basicClassification.o advancedClassificationLoop.o
-	$(CC) -shared -o libclassloops.so libclassloops.a $ basicClassification.o advancedClassificationLoop.o
+	$(CC) $(DYN_LIB_FLAGS) libclassloops.so libclassloops.a $ basicClassification.o advancedClassificationLoop.o
     
 recursived: libclassrec.so
 libclassrec.so: basicClassification.o advancedClassificationRecursion.o
-	$(CC) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
+	$(CC) $(DYN_LIB_FLAGS)	libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
 recursives:libclassrec.a
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o
