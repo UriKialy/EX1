@@ -1,27 +1,11 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-int power(int base, int expo)
-{
-    if (base < 0 || expo < 0)
-    {
-        printf("negative number, error");
-        return 0;
-    }
-    int i = 1;
-    int ans = base;
-    for (; i < expo; i++)
-    {
-        ans = ans * base;
-    }
-    return ans;
-}
-
+//this function checks if the number is an armstrong number using loops
 int isArmstrong(int a)
 {
     if (a < 0)
     {
-        printf("negative number, error");
         return 0;
     }
     int i = 0;
@@ -51,11 +35,11 @@ int isArmstrong(int a)
     }
 }
 
+//this function checks if the number is a palindrom number using loops
 int isPalindrome(int n)
 {
     if (n< 0)
     {
-        printf("negative number, error");
         return 0;
     }
     int ans = 0;
@@ -77,6 +61,22 @@ int isPalindrome(int n)
     if (reversed == n)
     {
         ans = 1;
+    }
+    return ans;
+}
+
+//this function calculate the base power by expo
+int power(int base, int expo)
+{
+    if (base < 0 || expo < 0)
+    {
+        return 0;
+    }
+    int i = 1;
+    int ans = base;
+    for (; i < expo; i++)
+    {
+        ans = ans * base;
     }
     return ans;
 }

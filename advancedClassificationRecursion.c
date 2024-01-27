@@ -4,6 +4,7 @@
 int reverseNum(int, int);
 int calcArmstrong(int, int, int);
 
+//this function checks if the number is a palindrom recursivly
 int isPalindrome(int n)
 {
     int number = reverseNum(n, 0);
@@ -17,20 +18,12 @@ int isPalindrome(int n)
         return 0;
     }
 }
-int reverseNum(int n, int copy)
-{
-    if (n == 0)
-    {
-        return copy;
-    }
-    copy = (copy * 10) + (n % 10);
-    return reverseNum(n / 10, copy);
-}
+
+//this function returns if a number if the number is a armstrong number recursivly
 int isArmstrong(int a)
 {
     if (a < 0)
     {
-        printf("negative number, error");
         return 0;
     }
     int aNum = a;
@@ -43,27 +36,23 @@ int isArmstrong(int a)
     return calcArmstrong(a, a, count);
 }
 
-int power(int base, int expo)
+
+//this function reverses the number given to her
+int reverseNum(int n, int copy)
 {
-    if (base < 0 || expo < 0)
+    if (n == 0)
     {
-        printf("negative number, error");
-        return 0;
+        return copy;
     }
-    int i = 1;
-    int ans = base;
-    for (; i < expo; i++)
-    {
-        ans = ans * base;
-    }
-    return ans;
+    copy = (copy * 10) + (n % 10);
+    return reverseNum(n / 10, copy);
 }
 
+//this function calculates if a number if the number is a armstrong number recursivly
 int calcArmstrong(int n, int a, int len)
 {
     if (n < 0)
     {
-        printf("negative number, error");
         return 0;
     }
     int num = n;
@@ -84,4 +73,20 @@ int calcArmstrong(int n, int a, int len)
     dev -= power(num % 10, len);
     num /= 10;
     return calcArmstrong(num, dev, len);
+}
+
+//this function calculate the base power by expo
+int power(int base, int expo)
+{
+    if (base < 0 || expo < 0)
+    {
+        return 0;
+    }
+    int i = 1;
+    int ans = base;
+    for (; i < expo; i++)
+    {
+        ans = ans * base;
+    }
+    return ans;
 }

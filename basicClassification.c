@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int isPrime(int n) // this func return 1 if n is prime and 0 else
+// this func return 1 if n is prime and 0 else
+int isPrime(int n)
 {
-    if (n < 0)
+    if (n < 0 || n == 0)
     {
-        printf("negative number, error");
         return 0;
     }
     int i = 2;
@@ -24,34 +24,18 @@ int isPrime(int n) // this func return 1 if n is prime and 0 else
         return 1;
     }
 }
-int factorial(int n)
-{
-    if (n < 0)
-    {
-        printf("negative number, error");
-        return 0;
-    }
-    int i = 1;
-    int copy=1;
-    for (; i<n; i++)
-    {
-        copy=copy*(i+1);
-    }
-    return copy;
-}
 
+// this func return 1 if n is a strong number and 0 else
 int isStrong(int n)
-{ // this func return 1 if n is a strong number and 0 else
-    if (n < 0)
+{ 
+    if (n < 0 || n == 0)
     {
-        printf("negative number, error");
         return 0;
     }
     int num = 0;
     int copy = n;
     while (copy != 0)
     {
-       // printf("%d  \n",num);
         num = num + factorial(copy % 10);
         copy = copy / 10;
     }
@@ -63,4 +47,20 @@ int isStrong(int n)
     {
         return 0;
     }
+}
+
+//this function calculates the factorial of n
+int factorial(int n)
+{
+    if (n < 0)
+    {
+        return 0;
+    }
+    int i = 1;
+    int copy=1;
+    for (; i<n; i++)
+    {
+        copy=copy*(i+1);
+    }
+    return copy;
 }

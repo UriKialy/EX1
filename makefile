@@ -3,7 +3,7 @@ AR=ar
 
 OBJECTS_MAIN=main.o
 
-FLAGS= -Wall -g
+FLAGS=-Wall -g
 DYN_LIB_FLAGS=-shared -fPIC -o 
 
 all: loopd loops recursives recursived maindrec mains mainldoop
